@@ -41,7 +41,7 @@ plugin_title <- function(options) {
 plugin_accessibility <- function(options) {
   base <- "Chartist.plugins.ctAccessibility(%s)"
 
-  transform <- "function(value) { console.log(value); return value; }"
+  transform <- "function(value) { return value; }"
   class(transform) <- "json"
   options$valueTransform <- transform
 

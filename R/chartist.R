@@ -8,12 +8,19 @@
 #'
 #' @export
 #' @examples
-#' my_chart <- iris %>%
+#' lines <- iris %>%
 #'   chartist(Sepal.Length, Sepal.Width) %>%
 #'   layer_line() %>%
 #'   layer_ratio_5_8()
 #'
-#' my_chart
+#' lines
+#'
+#' points <- iris %>%
+#'   chartist(Sepal.Length, Sepal.Width) %>%
+#'   layer_point() %>%
+#'   layer_ratio_5_8()
+#'
+#' points
 #'
 chartist <- function(data, x, y) {
   x <- enquo(x)
