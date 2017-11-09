@@ -15,6 +15,8 @@ jsonify_plugins <- function(chart) {
     function(nm) {
       if (nm == "title") {
         plugin_title(plugins[[nm]])
+      } else if (nm == "accessibility") {
+        plugin_accessibility(plugins[[nm]])
       } else {
         stop(
           'error parsing chart plugins, unknown plugin "', nm, "'",
@@ -32,6 +34,16 @@ jsonify_plugins <- function(chart) {
 
 plugin_title <- function(options) {
   base <- "Chartist.plugins.ctAxisTitle(%s)"
+
+  sprintf(base, jsonify(options))
+}
+
+plugin_accessibility <- function(options) {
+  base <- "Chartist.plugins.ctAccessibility(%s)"
+
+  transform <- "function(value) { console.log(value); return value; }"
+  class(transform) <- "json"
+  options$valueTransform <- transform
 
   sprintf(base, jsonify(options))
 }

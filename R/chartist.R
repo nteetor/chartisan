@@ -35,6 +35,7 @@ chartist <- function(data, x, y) {
           left = 20
         ),
         plugins = list(
+          accessibility = list(),
           title = list(
             axisX = list(
               axisTitle = as.character(x[[2]]),

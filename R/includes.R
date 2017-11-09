@@ -5,6 +5,7 @@
     tags$head(
       tags$script(src = "chartisan/chartist/chartist.min.js"),
       tags$script(src = "chartisan/chartist/chartist-plugin-axistitle.min.js"),
+      tags$script(src = "chartisan/chartist/chartist-plugin-accessibility.min.js"),
       tags$link(rel = "stylesheet", href = "chartisan/chartist/chartist.min.css")
     )
   )
