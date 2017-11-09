@@ -18,12 +18,23 @@ Produce chartist.js charts from R.
 
 Right now there's a lot of room for anything, so let me know your thoughts or feelings in a [issue](https://github.com/nteetor/chartisan/issues/new).
 
+## installation
+
+Currently, chartisan is only available for installation from GitHub. In the 
+future chartisan may be submitted to CRAN (think waaaay in the future).
+
+```R
+devtools::install_github("nteetor/chartisan")
+```
+
 ## examples
 
 The following example generates a simple chart, displayed in a shiny
 application.
 
 ```R
+library(chartisan)
+
 my_chart <- iris %>%
  chartist(Sepal.Length, Sepal.Width) %>%
  layer_line() %>%
