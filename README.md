@@ -4,8 +4,9 @@ Produce chartist.js charts from R.
 ## my thoughts
 
 1. I am aware there are a couple chartist.js R projects out there. The projects in question do not meet certain criteria for me. 
-1. This project is intended for use with [dull](https://github.com/nteetor/dull) and needs to end up on CRAN. (neither of the previous chartist R projects are on CRAN at the time I wrote this)
-1. I hope to mimic much of what was built into [ggvis](https://github.com/rstudio/ggvis)
+1. This project is intended for use with [dull](https://github.com/nteetor/dull) and needs to end up on CRAN. (neither of the previous chartist R projects are on CRAN at the time I wrote this).
+1. I hope to mimic much of what was built into [ggvis](https://github.com/rstudio/ggvis).
+1. Finally, the accessibility plugin for Chartist has me intrigued. Recently I have had to develop 508 applications and would love to create a way to build compliant visulizations from R.
 
 ## your concerns?
 
