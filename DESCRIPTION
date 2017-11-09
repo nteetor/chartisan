@@ -1,0 +1,21 @@
+Package: chartisan
+Title: Chartist.js Charts in R
+Version: 0.0.1
+Authors@R: person(given = "Nathan", family = "Teetor", email = "nathanteetor@gmail.com", role = c("aut", "cre"))
+Description: Build chartist.js charts in R. Build
+   accessible charts.
+Depends: R (>= 3.4.2)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE, roclets = c("rd", "namespace", "collate"))
+Imports:
+    rlang,
+    dplyr,
+    shiny,
+    htmltools,
+    jsonlite
+RoxygenNote: 6.0.1
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr
