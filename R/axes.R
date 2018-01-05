@@ -18,8 +18,8 @@
 #'   to `"end"` and the y-axis position defaults to `"start"`.
 #'
 #' @export
-add_x_axis <- function(chart, title = NULL, labels = TRUE, grid = TRUE,
-                       offset = 30, position = "end") {
+add_x_axis <- function(chart, title = NULL, labels = TRUE, integers = FALSE,
+                       grid = TRUE, offset = 30, position = "end") {
   if (!is.chartist(chart)) {
     stop(
       "incorrect `chart` argument, expecting object of class `chartist`",
@@ -43,6 +43,10 @@ add_x_axis <- function(chart, title = NULL, labels = TRUE, grid = TRUE,
   chart$options$axisX$showLabel <- labels
   chart$options$axisX$showGrid <- grid
 
+  if (integers) {
+    chart$options$axisX$onlyInteger <- TRUE
+  }
+
   if (!is.null(title)) {
     chart$options$plugins$title$axisX$axisTitle <- title
   }
@@ -52,8 +56,8 @@ add_x_axis <- function(chart, title = NULL, labels = TRUE, grid = TRUE,
 
 #' @rdname add_x_axis
 #' @export
-add_y_axis <- function(chart, title = NULL, labels = TRUE, grid = TRUE,
-                       offset = 40, position = "start") {
+add_y_axis <- function(chart, title = NULL, labels = TRUE, integers = TRUE,
+                       grid = TRUE, offset = 40, position = "start") {
   if (!is.chartist(chart)) {
     stop(
       "incorrect `chart` argument, expecting object of class `chartist`",
@@ -79,6 +83,10 @@ add_y_axis <- function(chart, title = NULL, labels = TRUE, grid = TRUE,
 
   if (!is.null(title)) {
     chart$options$plugins$title$axisY$axisTitle <- title
+  }
+
+  if (integers) {
+    chart$options$axisY$onlyInteger <- TRUE
   }
 
   invisible(chart)

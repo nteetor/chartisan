@@ -10,7 +10,8 @@
 #'   chartist(waiting, eruptions) %>%
 #'   layer_area() %>%
 #'   layer_ratio_2_5() %>%
-#'   add_x_axis(grid = FALSE)
+#'   add_x_axis(grid = TRUE) %>%
+#'   add_y_axis(integers = TRUE)
 #'
 #' areas
 #'
@@ -27,6 +28,16 @@ layer_area <- function(chart) {
   chart$options$showLine <- FALSE
   chart$options$showPoint <- FALSE
   chart$options$showArea <- TRUE
+
+  chart$options$axisX <- list(
+    type = ~ Chartist.AutoScaleAxis,
+    onlyInteger = TRUE
+  )
+
+  chart$options$lineSmooth <- FALSE
+
+  chart$options$showGridBackground <- TRUE
+  chart$options$fullWidth <- FALSE
 
   invisible(chart)
 }
